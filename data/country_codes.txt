@@ -1,0 +1,49 @@
+AT	Austria
+BE	Belgium
+BG	Bulgaria
+CY	Cyprus
+CZ	Czech Republic
+DE	Germany
+DK	Denmark
+EE	Estonia
+ES	Spain
+FI	Finland
+FR	France
+GR	Greece
+HR	Croatia
+HU	Hungary
+IE	Ireland
+IT	Italy
+LT	Lithuania
+LU	Luxembourg
+LV	Latvia
+MT	Malta
+NL	Netherlands
+PL	Poland
+PT	Portugal
+RO	Romania
+SE	Sweden
+SI	Slovenia
+SK	Slovakia
+GB	United Kingdom
+US	United States
+JP	Japan
+CN	China
+CA	Canada
+KR	South Korea
+BR	Brazil
+IN	India
+MX	Mexico
+RU	Russia
+AU	Australia
+CH	Switzerland
+TR	Turkey
+TW	Taiwan
+NO	Norway
+ID	Indonesia
+ZA	South Africa
+WA	RoC Asia and Pacific
+WL	RoC America
+WE	RoC Europe
+WF	RoC Africa
+WM	RoC Middle East

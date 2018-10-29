@@ -1,0 +1,4 @@
+Problem oriented approach: baseline (CML, 1999)	global warming GWP100	GWP100 (IPCC, 2007)	kg CO2 eq.	Carbon
+Domestic Extraction	kt	Material
+Water Consumption Blue - Total	Mm3	Water
+Land use	km2	Land

@@ -1,0 +1,4 @@
+		Land use - Arable Land - Rice	Land use - Arable Land - Wheat	Land use - Arable Land - Other cereals	Land use - Arable Land - Vegetables, fruits, nuts	Land use - Arable Land - Oil crops	Land use - Arable Land - Sugar crops	Land use - Arable Land - Fibres	Land use - Arable Land - Other crops	Land use - Arable Land - Fodder crops	Land use - Permanent pasture	Used Forest Land - Industrial roundwood	Used Forest Land - Wood fuel	Used Other Land - Wood fuel	Infrastructure Land
+		nature	nature	nature	nature	nature	nature	nature	nature	nature	nature	nature	nature	nature	nature
+		km2	km2	km2	km2	km2	km2	km2	km2	km2	km2	km2	km2	km2	km2
+Land use	km2	1	1	1	1	1	1	1	1	1	1	1	1	1	1

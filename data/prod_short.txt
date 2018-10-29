@@ -1,0 +1,200 @@
+Paddy rice
+Wheat
+Cereal grains nec
+Vegetables, fruit, nuts
+Oil seeds
+Sugar cane, sugar beet
+Plant-based fibers
+           Crops n.e.c.
+Cattle
+Pigs
+Poultry
+Meat animals nec
+Animal products nec
+Raw milk
+Wool, silk-worm cocoons
+Manure (conventional treatment)
+Manure (biogas treatment)
+               Forestry
+Services incidental of fishing
+Anthracite
+Coking Coal
+Other Bituminous Coal
+Sub-Bituminous Coal
+Patent Fuel
+Lignite or Brown Coal
+BKB or Peat Briquettes
+Peat
+Crude petroleum
+Natural gas
+Natural Gas Liquids
+Other Hydrocarbons
+Uranium and thorium ores
+Iron ores
+Copper ores and concentrates
+Nickel ores and concentrates
+Aluminium ores and concentrates
+Precious metal ores and concentrates
+Lead, zinc and tin ores and concentrates
+Other non-ferrous metal ores and concentrates
+Stone
+Sand and clay
+Quarrying products n.e.c.
+            Meat cattle
+Products of meat pigs
+Products of meat poultry
+Meat products nec
+Products of vegetable oils and fats
+Dairy products
+Processed rice
+Sugar
+   Food products n.e.c.
+Beverages
+Fish products
+Tobacco products
+Textiles
+                   Furs
+                Leather
+Articles of straw and plaiting materials
+Secondary wood material for treatment
+Pulp
+Secondary paper for treatment
+Paper and paper products
+Printed matter and recorded media
+Coke Oven Coke
+Gas Coke
+Coal Tar
+Motor Gasoline
+Aviation Gasoline
+Gasoline Type Jet Fuel
+Kerosene Type Jet Fuel
+Kerosene
+Gas or Diesel Oil
+Heavy Fuel Oil
+Refinery Gas
+Liquefied Petroleum Gases (LPG)
+Refinery Feedstocks
+Ethane
+Naphtha
+White Spirit & SBP
+Lubricants
+Bitumen
+Paraffin Waxes
+Petroleum Coke
+Non-specified Petroleum Products
+Nuclear fuel
+Plastics, basic
+Secondary plastic for treatment
+N-fertiliser
+P- and other fertiliser
+       Chemicals n.e.c.
+Charcoal
+Additives or Blending Components
+Biogasoline
+Biodiesels
+Other Liquid Biofuels
+Rubber and plastic products
+Glass and glass products
+Secondary glass for treatment
+Ceramic goods
+Bricks
+Cement, lime and plaster
+Ash for treatment
+Other non-metallic mineral products
+Basic iron and steel
+Secondary steel for treatment
+Precious metals
+Secondary precious metals for treatment
+Aluminium and aluminium products
+Secondary aluminium for treatment
+Lead, zinc and tin and products thereof
+Secondary lead for treatment
+Copper products
+Secondary copper for treatment
+Other non-ferrous metal products
+Secondary other non-ferrous metals for treatment
+Foundry work services
+Fabricated metal products
+       Machinery n.e.c.
+Office machinery and computers
+Electrical machinery and apparatus n.e.c.
+          Communication
+Medical, precision and optical instruments
+         Motor vehicles
+Other transport equipment
+              Furniture
+Secondary raw materials
+Recycling of bottles by direct reuse
+Electricity by coal
+Electricity by gas
+Electricity by nuclear
+Electricity by hydro
+Electricity by wind
+Electricity by petroleum
+Electricity by biomass and waste
+Electricity by solar photovoltaic
+Electricity by solar thermal
+Electricity by tide, wave, ocean
+Electricity by Geothermal
+Electricity nec
+Transmission services of electricity
+Distribution and trade services of electricity
+Coke oven gas
+Blast Furnace Gas
+Oxygen Steel Furnace Gas
+Gas Works Gas
+Biogas
+Distribution services of gaseous fuels through mains
+Steam and hot water supply services
+Distribution services of water
+Construction work
+Secondary construction material for treatment
+Motor vehicles parts
+Retail trade services of motor fuel
+Wholesale trade and commission trade services
+Repair services of personal and household goods
+Hotel and restaurant services
+Railway transportation services
+Other land transportation services
+Transportation services via pipelines
+Sea and coastal water transportation services
+Inland water transportation services
+          Air transport
+Travel agency services
+Post and telecommunication services
+Financial intermediation services
+Insurance and pension funding services
+Services auxiliary to financial intermediation
+Real estate services
+Renting services of machinery
+Computer and related services
+Research and development services
+Other business services
+Compulsory social security services
+Education services
+Health and social work services
+Food waste for treatment: incineration
+Paper waste for treatment: incineration
+Plastic waste for treatment: incineration
+Intert or metal waste for treatment: incineration
+Textiles waste for treatment: incineration
+Wood waste for treatment: incineration
+Oil or hazardous waste for treatment: incineration
+Food waste: biogasification and land application
+Paper waste: biogasification and land application
+Sewage sludge: biogasification and land application
+Food waste: composting and land application
+Paper and wood waste: composting and land application
+Food waste: waste water treatment
+Other waste: waste water treatment
+Food waste: landfill
+Paper: landfill
+Plastic waste: landfill
+Inert or metal or hazardous waste: landfill
+Textiles waste: landfill
+Wood waste: landfill
+Membership organisation services n.e.c.
+Recreational, cultural and sporting services
+Other services
+Private households with employed persons
+Extra-territorial organizations and bodies
