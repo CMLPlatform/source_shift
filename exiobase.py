@@ -98,7 +98,7 @@ def fill_unit(df_source, df_target):
 
 
 def parse():
-    print('Begin parsing EXIOBASE')
+    print('\nBegin parsing EXIOBASE')
     dict_eb_parse_meta = get_dict_eb_parse_meta()
     dict_eb_raw = {}
 
@@ -143,12 +143,12 @@ def parse():
     dict_eb_raw['cQm'] = df_cQm
     dict_eb_raw['cQr'] = df_cQr
 
-    print('Done parsing EXIOBASE')
+    print('\nDone parsing EXIOBASE')
     return dict_eb_raw
 
 
 def process(dict_eb_raw):
-    print('Begin processing EXIOBASE')
+    print('\nBegin processing EXIOBASE')
     dict_eb_proc = {}
 
     # Construct Total Production Vector x from sum of Z and Y.
@@ -193,7 +193,7 @@ def process(dict_eb_raw):
     dict_eb_proc['tHm'] = dict_eb_raw['tHm']
     dict_eb_proc['tHr'] = dict_eb_raw['tHr']
 
-    print('Done processing EXIOBASE')
+    print('\nDone processing EXIOBASE')
     return dict_eb_proc
 
 
