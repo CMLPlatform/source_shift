@@ -1,4 +1,8 @@
 # source_shift
+
+[![DOI](https://zenodo.org/badge/155264797.svg)](https://zenodo.org/badge/latestdoi/155264797)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 Repository for paper on reducing import embedded footprints of EU28 by source shifting.
 
 This analysis makes uses of the 2011 tables from the product-by-product representation of EXIOBASE v3.3. 
