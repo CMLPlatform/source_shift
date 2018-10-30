@@ -7,7 +7,7 @@ Repository for paper on reducing import embedded footprints of EU28 by source sh
 
 This analysis makes uses of the 2011 tables from the product-by-product representation of EXIOBASE v3.3. 
 
-These tables can be downloaded from http://exiobase.eu/
+These tables can be obtained through the original authors.
 
 ## source_shift.py
 This is the main script.
