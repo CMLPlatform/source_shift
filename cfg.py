@@ -9,6 +9,7 @@
     Department of Industrial Ecology
     Einsteinweg 2
     2333 CC Leiden
+    The Netherlands
 
     +31 (0)71 527 1478
     b.f.de.boer@cml.leidenuniv.nl
@@ -108,11 +109,18 @@ cf_magnitude_file_name = 'cf_magnitude.txt'
 prod_order_file_name = 'prod_order.txt'
 
 # Set font size for plotting.
-font_size = 8.0
-plt.rc('mathtext', default='regular')
-plt.rc('font', size=font_size)
-plt.rc('axes', titlesize=font_size)
-
+#font_size = 8.0
+#plt.rc('mathtext', default='regular')
+#plt.rc('font', size=font_size)
+#plt.rc('axes', titlesize=font_size)
+dpi = 220
+#dpi = 96
+font_size = 9.0
+plt.rcParams['mathtext.default'] = 'regular'
+plt.rcParams['font.size'] = font_size
+plt.rcParams['axes.titlesize'] =  font_size
+plt.rcParams['font.sans-serif'] = 'Arial'
+#plt.rcParams['font.family'] = 'sans-serif'
 # Limit of cumulative relative footprint for highest contributing products.
 imp_cum_lim_priority = 0.5
 

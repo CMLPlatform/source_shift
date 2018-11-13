@@ -9,6 +9,7 @@
     Department of Industrial Ecology
     Einsteinweg 2
     2333 CC Leiden
+    The Netherlands
 
     +31 (0)71 527 1478
     b.f.de.boer@cml.leidenuniv.nl
@@ -469,7 +470,7 @@ class Priority:
 
         plt.close('all')
         dict_imp_cat_unit = get_dict_imp_cat_unit()
-        fig = plt.figure(figsize=cm2inch((16, 8)))
+        fig = plt.figure(figsize=cm2inch((16, cfg.font_size)), dpi=cfg.dpi)
         for imp_cat_id, imp_cat in enumerate(self.dict_result):
             plot_id = imp_cat_id+1
             plot_loc = 220+plot_id
@@ -834,7 +835,7 @@ class SourceShift():
                 y_start = 0
                 list_rect_y = []
                 list_rect_x = []
-                fig = plt.figure(figsize=cm2inch((16, 8)))
+                fig = plt.figure(figsize=cm2inch((16, 8)), dpi=cfg.dpi)
                 ax = plt.gca()
                 for cntr in self.dict_shift_result[imp_cat][prod]:
                     imp_pME_prod_cntr = self.dict_shift_result[imp_cat][prod][cntr]['imp_pME']
@@ -963,7 +964,7 @@ class SourceShift():
         dict_xlim_improv = {}
         for imp_cat_sel_id, imp_cat_sel in enumerate(self.dict_reduc_result):
             plt.close('all')
-            fig = plt.figure(figsize=cm2inch((16, 1+13*0.4)))
+            fig = plt.figure(figsize=cm2inch((16, 1+13*0.4)), dpi=cfg.dpi)
             for imp_cat_eff_id, imp_cat_eff in (
                     enumerate(self.dict_reduc_result[imp_cat_sel])):
                 plot_id = imp_cat_eff_id+1
@@ -1017,7 +1018,8 @@ class SourceShift():
         plt.close('all')
         for imp_cat_sel_id, imp_cat_sel in enumerate(self.dict_reduc_result):
             fig = plt.figure(
-                    figsize=cm2inch((16, len(list_prod_order_cons)*.4+2)))
+                    figsize=cm2inch((16, len(list_prod_order_cons)*.4+2)),
+                    dpi=cfg.dpi)
             for imp_cat_eff_id, imp_cat_eff in (
                     enumerate(self.dict_reduc_result[imp_cat_sel])):
                 plot_id = imp_cat_eff_id+1
@@ -1026,7 +1028,7 @@ class SourceShift():
                 fp = self.dict_imp_cat_fp[imp_cat_eff]
                 ax.set_title(fp)
                 unit = dict_imp_cat_unit[imp_cat_eff[-1]]
-                ax.set_xlabel(unit)
+                ax.set_xlabel(unit, verticalalignment='baseline', labelpad=10)
                 ax.set_xlim(dict_xlim_improv[imp_cat_eff])
                 df_old = pd.DataFrame(
                         self.dict_reduc_result[imp_cat_sel][imp_cat_eff]['Ante'],
@@ -1121,7 +1123,7 @@ class SourceShift():
 
         # Plot fraction of new and old footprint as spider plot.
         plt.close('all')
-        fig = plt.figure(figsize=cm2inch((16, 16)))
+        fig = plt.figure(figsize=cm2inch((16, 16)), dpi=cfg.dpi)
         fp_order = ['Carbon', 'Land', 'Water', 'Material']
         for fp_sel_id, fp_sel in enumerate(dict_pot_imp_agg_rel):
             list_imp_rel = []
@@ -1141,6 +1143,7 @@ class SourceShift():
                                     2*math.pi/4)
             ax.set_xticks(xtick_count)
             ax.set_xticklabels(list_xticklabel)
+            ax.xaxis.set_tick_params(pad=10)
             ax.set_ylim([0, 1.0])
             y_val = list_imp_rel
             y_val.append(y_val[0])
@@ -1177,36 +1180,42 @@ class SourceShift():
         source_shift_dir_path = (cfg.result_dir_path
                                  + cfg.shift_dir_name)
 
-        log_file_name = 'log.txt'
-        log_file_path = (source_shift_dir_path
-                         + cfg.txt_dir_name
-                         + log_file_name)
-        print('\nSaving source shift log to:\n\t{}'.format(
-                source_shift_dir_path+cfg.txt_dir_name))
-        with open(log_file_path, 'w') as write_file:
-            csv_file = csv.writer(write_file,
-                                  delimiter='\t',
-                                  lineterminator='\n')
-            csv_file.writerow(['Footprint',
-                               'Product',
-                               'Exporting country',
-                               'Footprint per ME',
-                               'EU import ante',
-                               'EU import post'])
-            for imp_cat in self.dict_shift_result:
+        for imp_cat in self.dict_shift_result:
+            fp = self.dict_imp_cat_fp[imp_cat]
+            unit = imp_cat[-1]
+            log_file_name = fp+'.txt'
+            log_file_path = (source_shift_dir_path
+                             + cfg.txt_dir_name
+                             + log_file_name)
+            print('\nSaving source shift log to:\n\t{}'.format(
+                    source_shift_dir_path+cfg.txt_dir_name))
+
+            with open(log_file_path, 'w') as write_file:
+                csv_file = csv.writer(write_file,
+                                      delimiter='\t',
+                                      lineterminator='\n')
+                csv_file.writerow(['Footprint',
+                                   'Product',
+                                   'Exporting country',
+                                   unit+' per M Euro',
+                                   'Export [M Euro]',
+                                   'EU import ante [M Euro]',
+                                   'EU import post [M Euro]'])
+
                 for prod in self.dict_shift_result[imp_cat]:
                     for cntr in self.dict_shift_result[imp_cat][prod]:
                         imp_pME = self.dict_shift_result[imp_cat][prod][cntr]['imp_pME']
                         export = self.dict_shift_result[imp_cat][prod][cntr]['export']
                         import_old = self.dict_shift_result[imp_cat][prod][cntr]['EU_import_old']
                         import_new = self.dict_shift_result[imp_cat][prod][cntr]['EU_import_new']
-                        csv_file.writerow([imp_cat,
+                        csv_file.writerow([fp,
                                            prod,
                                            cntr,
                                            imp_pME,
                                            export,
                                            import_old,
                                            import_new])
+
 
     def log_reduc(self):
         """ For each optimized footprint, for each changed footprint, for each
@@ -1235,12 +1244,14 @@ class SourceShift():
                                'Ante',
                                'Post'])
             for imp_cat_sel in self.dict_reduc_result:
+                fp_sel = self.dict_imp_cat_fp[imp_cat_sel]
                 for imp_cat_eff in self.dict_reduc_result[imp_cat_sel]:
+                    fp_eff = self.dict_imp_cat_fp[imp_cat_eff]
                     for prod in self.dict_reduc_result[imp_cat_sel][imp_cat_eff]['Ante']:
                         fp_ante = self.dict_reduc_result[imp_cat_sel][imp_cat_eff]['Ante'][prod]
                         fp_post = self.dict_reduc_result[imp_cat_sel][imp_cat_eff]['Post'][prod]
-                        csv_file.writerow([imp_cat_sel,
-                                           imp_cat_eff,
+                        csv_file.writerow([fp_sel,
+                                           fp_eff,
                                            prod,
                                            fp_ante,
                                            fp_post])

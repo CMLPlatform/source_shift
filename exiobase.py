@@ -8,6 +8,7 @@
     Department of Industrial Ecology
     Einsteinweg 2
     2333 CC Leiden
+    The Netherlands
 
     +31 (0)71 527 1478
     b.f.de.boer@cml.leidenuniv.nl
@@ -29,6 +30,7 @@
 import numpy as np
 import os
 import pandas as pd
+import pickle
 
 import cfg
 
@@ -199,7 +201,8 @@ def process(dict_eb_raw):
 
 if __name__ == "__main__":
 
-    dict_eb_proc = process(parse())
+#    dict_eb_proc = process(parse())
+    dict_eb_proc = pickle.load(open(cfg.data_path+cfg.dict_eb_file_name, 'rb'))
 
     df_cQRLe = dict_eb_proc['cQe'].dot(dict_eb_proc['cRe']).dot(
             dict_eb_proc['cL'])
