@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """ Configurations for script of paper on
-    reducing import embedded footprints of EU28 by source shifting
+    reducing import embodied footprints of EU28 by source shifting
     Copyright (C) 2018
 
     Bertram F. de Boer
@@ -57,7 +57,8 @@ reduc_dir_name = '3_reduction/'
 pdf_dir_name = 'pdf/'
 png_dir_name = 'png/'
 txt_dir_name = 'txt/'
-list_output_dir_name = [pdf_dir_name, png_dir_name, txt_dir_name]
+test_dir_name = 'test/'
+list_output_dir_name = [pdf_dir_name, png_dir_name, txt_dir_name, test_dir_name]
 
 """Define directory and file names from which to read data."""
 # Root directory for data.

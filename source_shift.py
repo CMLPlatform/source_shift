@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """ Main script for paper on
-    reducing import embedded footprints of EU28 by source shifting
+    reducing import embodied footprints of EU28 by source shifting
     Copyright (C) 2018
 
     Bertram F. de Boer
@@ -49,5 +49,6 @@ priority.log()
 # Calculate reduction in import embedded footprints of EU28 by source shifting
 source_shift = ut.SourceShift()
 source_shift.calc(dict_cf, dict_eb, df_tY_eu28)
+source_shift.test()
 source_shift.plot()
 source_shift.log()

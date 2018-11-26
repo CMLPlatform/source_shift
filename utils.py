@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """ Utilities for script of paper on
-    reducing import embedded footprints of EU28 by source shifting
+    reducing import embodied footprints of EU28 by source shifting
     Copyright (C) 2018
 
     Bertram F. de Boer
@@ -567,7 +567,7 @@ class SourceShift():
         df_tY_eu28: DataFrame with EU28 imported final demand
 
         """
-        print('\nReducing import embedded footprints of EU28 by '
+        print('\nReducing import embodied footprints of EU28 by '
               'source shifting.')
 
         # Calculate import embodied footprints.
@@ -659,7 +659,9 @@ class SourceShift():
         for prod in dict_tY_eu28_cntr_import:
             dict_tY_prod[prod] = 0
             for cntr in dict_tY_eu28_cntr_import[prod]:
-                dict_tY_prod[prod] += dict_tY_eu28_cntr_import[prod][cntr]
+                x_prod_cntr = dict_tY_world_ex_prod_cntr[prod][cntr]
+                if x_prod_cntr >= cfg.x_prod_cntr_min:
+                    dict_tY_prod[prod] += dict_tY_eu28_cntr_import[prod][cntr]
 
         # For each footprint, for each product, for each exporting country
         # Shift imports from EU28 to countries with lowest impact intensity
@@ -697,7 +699,7 @@ class SourceShift():
 
         """
 
-        print('\nCalculating import embedded footprint reductions.')
+        print('\nCalculating import embodied footprint reductions.')
 
         # Restructure new EU28 import data for DataFrames.
         dict_df_tY_import_new = {}
@@ -757,7 +759,7 @@ class SourceShift():
                         dict_imp_new_reg[imp_cat_sel][imp_cat_eff])
 
     def calc(self, dict_cf, dict_eb, df_tY_eu28):
-        """ Calculate reduction in import embedded footprints of EU28
+        """ Calculate reduction in import embodied footprints of EU28
             by source shifting
 
             Parameters
@@ -769,6 +771,76 @@ class SourceShift():
         """
         self.calc_shift(dict_cf, dict_eb, df_tY_eu28)
         self.calc_reduc(dict_cf, dict_eb, df_tY_eu28)
+
+
+    def test(self):
+        shift_dir_path = cfg.result_dir_path+cfg.shift_dir_name
+        test_dir_path = shift_dir_path+cfg.test_dir_name
+        test_export_file_name = 'test_export.txt'
+        test_export_file_path = test_dir_path+test_export_file_name
+        test_import_sum_file_name = 'test_import_sum.txt'
+        test_import_sum_file_path = test_dir_path+test_import_sum_file_name
+
+        error_export_bool = False
+        error_import_sum_bool = False
+        with open(test_export_file_path, 'w') as write_file:
+            csv_export_file = csv.writer(write_file,
+                                  delimiter='\t',
+                                  lineterminator='\n')
+            with open(test_import_sum_file_path, 'w') as write_file:
+                csv_import_sum_file = csv.writer(write_file,
+                      delimiter='\t',
+                      lineterminator='\n')
+
+                for imp_cat in self.dict_shift_result:
+                    fp = self.dict_imp_cat_fp[imp_cat]
+                    for prod in self.dict_shift_result[imp_cat]:
+                        EU_import_old_sum = 0
+                        EU_import_new_sum = 0
+                        for cntr in self.dict_shift_result[imp_cat][prod]:
+                            export = self.dict_shift_result[imp_cat][prod][cntr]['export']
+                            EU_import_old = self.dict_shift_result[imp_cat][prod][cntr]['EU_import_old']
+                            EU_import_new = self.dict_shift_result[imp_cat][prod][cntr]['EU_import_new']
+                            EU_import_old_sum += EU_import_old
+                            EU_import_new_sum += EU_import_new
+                            if EU_import_new > export:
+                                if not error_export_bool:
+                                    csv_export_file.writerow(['New EU import larger than export sourcing country:'])
+                                    csv_export_file.writerow(['Footprint',
+                                                       'Product',
+                                                       'Exporting country',
+                                                       'Export',
+                                                       'Old EU import',
+                                                       'New EU import'])
+                                error_export_bool = True
+                                csv_export_file.writerow([fp,
+                                                   prod,
+                                                   cntr,
+                                                   export,
+                                                   EU_import_old,
+                                                   EU_import_new])
+                        if not(math.isclose(EU_import_old_sum, EU_import_new_sum)):
+                            if not error_import_sum_bool:
+                                csv_import_sum_file.writerow(['Sums of old and new EU import do not match:'])
+                                csv_import_sum_file.writerow(['Footprint',
+                                                              'Product',
+                                                              'Exporting country',
+                                                              'Export',
+                                                              'Sum old EU import',
+                                                              'Sum new EU import'])
+                            error_import_sum_bool = True
+                            csv_import_sum_file.writerow([fp,
+                                                          prod,
+                                                          cntr,
+                                                          export,
+                                                          EU_import_old_sum,
+                                                          EU_import_new_sum])
+                if not error_export_bool:
+                    csv_export_file.writerow(['Success! New EU import never larger than export.'])
+
+                if not error_import_sum_bool:
+                    csv_import_sum_file.writerow(['Success! Sums of old and new EU import always match.'])
+
 
     def plot_shift(self):
         """ Plot source shifts of imports
