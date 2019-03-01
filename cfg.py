@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """ Configurations for script of paper on
-    reducing import embodied footprints of EU28 by source shifting
+    potential reductions in the environmental footprints embodied in
+    European Union’s imports through source shifting
     Copyright (C) 2018
 
     Bertram F. de Boer

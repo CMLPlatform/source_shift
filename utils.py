@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """ Utilities for script of paper on
-    reducing import embodied footprints of EU28 by source shifting
+    potential reductions in the environmental footprints embodied in
+    European Union’s imports through source shifting
     Copyright (C) 2018
 
     Bertram F. de Boer
@@ -670,8 +671,6 @@ class SourceShift():
             for prod in dict_imp_prod_cntr_sort[imp_cat]:
                 y_prod = dict_tY_prod[prod]
                 for cntr in dict_imp_prod_cntr_sort[imp_cat][prod]:
-                    imp_pME_prod_cntr = dict_imp_pME[imp_cat][prod][cntr]
-                    y_prod_cntr = dict_tY_eu28_cntr_import[prod][cntr]
                     x_prod_cntr = dict_tY_world_ex_prod_cntr[prod][cntr]
                     # Exclude countries with very low exports, due to noise.
                     if x_prod_cntr >= cfg.x_prod_cntr_min:
