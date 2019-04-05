@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """ Main script for paper on
-    potential reductions in the environmental footprints embodied in
+    modeling reductions in the environmental footprints embodied in
     European Union’s imports through source shifting
     Copyright (C) 2018
 
